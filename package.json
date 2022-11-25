@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "sass": "^1.50.1"
+  },
+  "engines": {
+    "node": ">=14.18.1"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^5.11.3",
+    "@fullcalendar/vue3": "^5.11.3",
+    "@iconify/json": "^2.1.58",
+    "@nuxt/types": "^2.15.8",
+    "@pinia/nuxt": "^0.4.2",
+    "@unocss/nuxt": "^0.45.22",
+    "@unocss/preset-icons": "^0.45.22",
+    "@unocss/reset": "^0.45.22",
+    "axios": "^0.27.2",
+    "install-deps": "^1.1.0",
+    "lodash-es": "^4.17.21",
+    "nuxt": "^3.0.0",
+    "nuxt3": "^3.0.1-rc.0-27817270.4f2bfbe",
+    "pinia": "^2.0.14",
+    "pinia-plugin-persist": "^1.0.0",
+    "unocss": "^0.45.22"
+  }
+}
