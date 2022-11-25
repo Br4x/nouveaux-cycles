@@ -16,8 +16,10 @@
   "dependencies": {
     "@fullcalendar/core": "^5.11.3",
     "@fullcalendar/vue3": "^5.11.3",
+    "@googleapis/sheets": "^4.0.0",
     "@iconify/json": "^2.1.58",
     "@nuxt/types": "^2.15.8",
+    "@nuxtjs/axios": "^5.13.6",
     "@pinia/nuxt": "^0.4.2",
     "@unocss/nuxt": "^0.45.22",
     "@unocss/preset-icons": "^0.45.22",

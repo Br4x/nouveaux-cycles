@@ -217,6 +217,35 @@
 <script>
 export default {
   name: "Data",
+  data() {
+    return {
+      data: null,
+    };
+  },
+  async mounted() {
+    this.data = await $fetch(
+      "https://docs.google.com/spreadsheets/d/1pWj2kjrd2J0ldEZk26z5YfWXGTi4WcQQ/edit#gid=183212821"
+    );
+    console.log(this.data);
+
+    /*const sheets = google.sheets("v4");
+    const auth = new google.auth.GoogleAuth({
+      scopes: [
+        "https://www.googleapis.com/auth/drive",
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/spreadsheets",
+      ],
+    });
+
+    const authClient = await auth.getClient();
+    google.options({ auth: authClient });
+
+    const res = await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: "1pWj2kjrd2J0ldEZk26z5YfWXGTi4WcQQ",
+      requestBody: {},
+    });
+    console.log(res.data);*/
+  },
 };
 </script>
 
