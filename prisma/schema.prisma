@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model cercle {
+  id_cercle  Int     @id
+  nom_cercle String? @db.VarChar(255)
+}
+
+model contact {
+  id_contact            Int             @id
+  nom                   String          @db.VarChar(255)
+  prenom                String          @db.VarChar(255)
+  pronom                contact_pronom?
+  mail                  String          @db.VarChar(255)
+  telephone             String?         @db.VarChar(10)
+  structure             String?         @db.VarChar(255)
+  metier                String?         @db.VarChar(255)
+  adresse               String?         @db.VarChar(255)
+  ville                 String?         @db.VarChar(255)
+  code_postal           String          @db.VarChar(5)
+  est_benevole          Bytes?          @db.Binary(1)
+  est_adherent          Bytes?          @db.Binary(1)
+  est_abonne_newsletter Bytes?          @db.Binary(1)
+  est_partenaire        Bytes?          @db.Binary(1)
+  non_qualifie          Bytes?          @db.Binary(1)
+  id_contact_par        Int?
+  infos_divers          String?         @db.VarChar(1000)
+  photo                 Bytes?          @db.Binary(1)
+  envoi_kit             Bytes?          @db.Binary(1)
+}
+
+model evenement {
+  id_evenement   Int      @id
+  nom_evenement  String   @db.VarChar(255)
+  date_evenement DateTime @db.Timestamp(0)
+}
+
+model invite_evenement {
+  id_evenement Int
+  id_contact   Int
+  role_contact invite_evenement_role_contact?
+
+  @@id([id_evenement, id_contact])
+}
+
+model membre_cercle {
+  id_contact Int
+  id_cercle  Int
+
+  @@id([id_cercle, id_contact])
+}
+
+enum invite_evenement_role_contact {
+  intervenant
+  participant
+}
+
+enum contact_pronom {
+  elle
+  il
+  iel
+}

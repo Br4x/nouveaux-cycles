@@ -9,200 +9,35 @@
             <table class="min-w-full text-sm text-gray-400 bg-white">
               <thead class="bg-gray-800 text-xs uppercase font-medium">
                 <tr>
-                  <th></th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    Club
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    MP
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    W
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    D
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    L
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    GF
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    GA
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    GD
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    Pts
-                  </th>
-                  <th scope="col" class="px-6 py-3 text-left tracking-wider">
-                    Last 5
-                  </th>
+                  <th v-for="header in headers" :key="header">{{ header }}</th>
+                  <th />
+                  <th />
+                  <th />
                 </tr>
               </thead>
               <tbody class="">
-                <tr>
-                  <td class="pl-4">1</td>
-                  <td class="flex px-6 py-4 whitespace-nowrap">
-                    <img
-                      class="w-5"
-                      src="https://ssl.gstatic.com/onebox/media/sports/logos/udQ6ns69PctCv143h-GeYw_48x48.png"
-                      alt=""
-                    />
-                    <span class="ml-2 font-medium">Man United</span>
+                <tr v-for="(row, index) in data" :key="'row' + index">
+                  <td
+                    v-for="attribute in getValues(row)"
+                    class="px-6 py-4 whitespace-nowrap"
+                    :key="'attr' + attribute"
+                  >
+                    {{ attribute }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">17</td>
-                  <td class="px-6 py-4 whitespace-nowrap">11</td>
-                  <td class="px-6 py-4 whitespace-nowrap">3</td>
-                  <td class="px-6 py-4 whitespace-nowrap">3</td>
-                  <td class="px-6 py-4 whitespace-nowrap">34</td>
-                  <td class="px-6 py-4 whitespace-nowrap">24</td>
-                  <td class="px-6 py-4 whitespace-nowrap">10</td>
-                  <td class="px-6 py-4 whitespace-nowrap">34</td>
-                  <td class="flex px-6 py-4 whitespace-nowrap">
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                  <td>
+                    <span class="p-2 rounded-full bg-orange-400 text-white">
+                      Editer
+                    </span>
                   </td>
-                </tr>
-                <tr>
-                  <td class="pl-4">2</td>
-                  <td class="flex px-6 py-4 whitespace-nowrap">
-                    <img
-                      class="w-5"
-                      src="https://ssl.gstatic.com/onebox/media/sports/logos/0iShHhASp5q1SL4JhtwJiw_48x48.png"
-                      alt=""
-                    />
-                    <span class="ml-2 font-medium">Liverpool</span>
+                  <td>
+                    <span class="p-2 rounded-full bg-green-400 text-white">
+                      Ajouter
+                    </span>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">17</td>
-                  <td class="px-6 py-4 whitespace-nowrap">9</td>
-                  <td class="px-6 py-4 whitespace-nowrap">6</td>
-                  <td class="px-6 py-4 whitespace-nowrap">2</td>
-                  <td class="px-6 py-4 whitespace-nowrap">37</td>
-                  <td class="px-6 py-4 whitespace-nowrap">21</td>
-                  <td class="px-6 py-4 whitespace-nowrap">16</td>
-                  <td class="px-6 py-4 whitespace-nowrap">33</td>
-                  <td class="flex px-6 py-4 whitespace-nowrap">
-                    <svg
-                      class="w-4 fill-current text-red-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      class="w-4 fill-current text-green-600"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                  <td>
+                    <span class="p-2 rounded-full bg-red-400 text-white">
+                      Supprimer
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -219,32 +54,41 @@ export default {
   name: "Data",
   data() {
     return {
-      data: null,
+      data: [
+        {
+          name: "testname1",
+          prout: "testname1",
+          lol: "testname1",
+          myname: "testname1",
+          plotman: "testname1",
+        },
+        {
+          name: "testname2",
+          prout: "testname2",
+          lol: "testname2",
+          myname: "testname2",
+          plotman: "testname2",
+        },
+        {
+          name: "testname3",
+          prout: "testname3",
+          lol: "testname3",
+          myname: "testname3",
+          plotman: "testname3",
+        },
+      ],
     };
   },
-  async mounted() {
-    this.data = await $fetch(
-      "https://docs.google.com/spreadsheets/d/1pWj2kjrd2J0ldEZk26z5YfWXGTi4WcQQ/edit#gid=183212821"
-    );
-    console.log(this.data);
-
-    /*const sheets = google.sheets("v4");
-    const auth = new google.auth.GoogleAuth({
-      scopes: [
-        "https://www.googleapis.com/auth/drive",
-        "https://www.googleapis.com/auth/drive.file",
-        "https://www.googleapis.com/auth/spreadsheets",
-      ],
-    });
-
-    const authClient = await auth.getClient();
-    google.options({ auth: authClient });
-
-    const res = await sheets.spreadsheets.batchUpdate({
-      spreadsheetId: "1pWj2kjrd2J0ldEZk26z5YfWXGTi4WcQQ",
-      requestBody: {},
-    });
-    console.log(res.data);*/
+  async mounted() {},
+  computed: {
+    headers() {
+      return Object.keys(this.data[0]);
+    },
+  },
+  methods: {
+    getValues(item) {
+      return Object.values(item);
+    },
   },
 };
 </script>

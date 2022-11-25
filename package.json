@@ -14,8 +14,8 @@
     "node": ">=14.18.1"
   },
   "dependencies": {
-    "@fullcalendar/core": "^5.11.3",
-    "@fullcalendar/vue3": "^5.11.3",
+    "@prisma/client": "^4.4.0",
+    "prisma": "^4.4.0",
     "@googleapis/sheets": "^4.0.0",
     "@iconify/json": "^2.1.58",
     "@nuxt/types": "^2.15.8",
@@ -24,6 +24,7 @@
     "@unocss/nuxt": "^0.45.22",
     "@unocss/preset-icons": "^0.45.22",
     "@unocss/reset": "^0.45.22",
+    "d3": "^5.9.1",
     "axios": "^0.27.2",
     "install-deps": "^1.1.0",
     "lodash-es": "^4.17.21",
